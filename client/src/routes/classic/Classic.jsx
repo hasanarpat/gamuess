@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import './classic.css';
+import useDebouncedValue from '../../lib/useDebouncedValue';
 
 const game = {
   img: '../../public/game-sample.png',
@@ -16,6 +17,7 @@ const averageTry = 1;
 
 const Classic = () => {
   const [gameName, setGameName] = useState('');
+  const debouncedValue = useDebouncedValue(gameName, 500);
   const [passedHeart, setPassedHeart] = useState(2);
 
   const handleSubmit = () => {};
