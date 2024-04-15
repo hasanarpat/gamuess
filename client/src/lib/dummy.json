@@ -1,0 +1,107 @@
+[
+  {
+    "game_title": "Assassin's Creed Valhalla",
+    "cover_image": "assassins_creed_valhalla.jpg",
+    "platform": "PlayStation 5"
+  },
+  {
+    "game_title": "Cyberpunk 2077",
+    "cover_image": "cyberpunk_2077.jpg",
+    "platform": "PC"
+  },
+  {
+    "game_title": "The Legend of Zelda: Breath of the Wild",
+    "cover_image": "breath_of_the_wild.jpg",
+    "platform": "Nintendo Switch"
+  },
+  {
+    "game_title": "Red Dead Redemption 2",
+    "cover_image": "red_dead_redemption_2.jpg",
+    "platform": "Xbox Series X"
+  },
+  {
+    "game_title": "FIFA 22",
+    "cover_image": "fifa_22.jpg",
+    "platform": "PlayStation 4"
+  },
+  {
+    "game_title": "Call of Duty: Warzone",
+    "cover_image": "call_of_duty_warzone.jpg",
+    "platform": "Xbox One"
+  },
+  {
+    "game_title": "Marvel's Spider-Man: Miles Morales",
+    "cover_image": "spiderman_miles_morales.jpg",
+    "platform": "PlayStation 5"
+  },
+  {
+    "game_title": "Among Us",
+    "cover_image": "among_us.jpg",
+    "platform": "iOS"
+  },
+  {
+    "game_title": "Minecraft",
+    "cover_image": "minecraft.jpg",
+    "platform": "Nintendo Switch"
+  },
+  {
+    "game_title": "Fortnite",
+    "cover_image": "fortnite.jpg",
+    "platform": "Android"
+  },
+  {
+    "game_title": "Grand Theft Auto V",
+    "cover_image": "gta_v.jpg",
+    "platform": "PC"
+  },
+  {
+    "game_title": "The Witcher 3: Wild Hunt",
+    "cover_image": "witcher_3.jpg",
+    "platform": "PlayStation 4"
+  },
+  {
+    "game_title": "Apex Legends",
+    "cover_image": "apex_legends.jpg",
+    "platform": "Xbox One"
+  },
+  {
+    "game_title": "Pokemon Sword and Shield",
+    "cover_image": "pokemon_sword_shield.jpg",
+    "platform": "Nintendo Switch"
+  },
+  {
+    "game_title": "Overwatch",
+    "cover_image": "overwatch.jpg",
+    "platform": "PC"
+  },
+  {
+    "game_title": "League of Legends",
+    "cover_image": "league_of_legends.jpg",
+    "platform": "PC"
+  },
+  {
+    "game_title": "Animal Crossing: New Horizons",
+    "cover_image": "animal_crossing.jpg",
+    "platform": "Nintendo Switch"
+  },
+  {
+    "game_title": "Super Mario Odyssey",
+    "cover_image": "super_mario_odyssey.jpg",
+    "platform": "Nintendo Switch"
+  },
+  {
+    "game_title": "Counter-Strike: Global Offensive",
+    "cover_image": "counter_strike_go.jpg",
+    "platform": "PC"
+  },
+  {
+    "game_title": "God of War",
+    "cover_image": "god_of_war.jpg",
+    "platform": "PlayStation 4"
+  },
+  {
+    "game_title": "Valorant",
+    "cover_image": "valorant.jpg",
+    "platform": "PC"
+  }
+]

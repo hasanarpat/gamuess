@@ -1,6 +1,7 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './classic.css';
 import useDebouncedValue from '../../lib/useDebouncedValue';
+import dummy from '../../lib/dummy.json';
 
 const game = {
   img: '../../public/game-sample.png',
@@ -17,10 +18,12 @@ const averageTry = 1;
 
 const Classic = () => {
   const [gameName, setGameName] = useState('');
+  const [gameSearch, setGameSearch] = useState([]);
   const debouncedValue = useDebouncedValue(gameName, 500);
   const [passedHeart, setPassedHeart] = useState(2);
 
   const handleSubmit = () => {};
+
   const handlePass = () => {
     if (passedHeart <= 6) {
       setPassedHeart((prev) => prev + 1);
@@ -28,6 +31,17 @@ const Classic = () => {
       return;
     }
   };
+
+  useEffect(() => {
+    if (debouncedValue.length > 0) {
+      const arr = dummy.filter((d) =>
+        d['game_title'].toLowerCase().includes(debouncedValue.toLowerCase())
+      );
+      setGameSearch(arr);
+    } else {
+      setGameSearch([]);
+    }
+  }, [debouncedValue]);
 
   return (
     <main className='classic'>
@@ -48,7 +62,15 @@ const Classic = () => {
             value={gameName}
             onChange={(e) => setGameName(e.target.value)}
           />
-          <div className='games'></div>
+          {gameSearch.length > 0 && (
+            <ul className='search-result'>
+              {gameSearch.map((game, i) => (
+                <li key={i} className='searc-result-item'>
+                  {game.game_title}
+                </li>
+              ))}
+            </ul>
+          )}
           <div className='buttons'>
             <button onClick={handlePass}>Pass</button>
             <button onClick={handleSubmit}>Try it</button>
