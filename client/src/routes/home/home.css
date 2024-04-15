@@ -1,2 +1,31 @@
 .home {
+  width: 100%;
+  padding: 20px;
+  height: 100%;
+
+  .container {
+    display: flex;
+    width: 100%;
+    gap: 30px;
+    height: 60%;
+
+    .card {
+      flex: 1;
+      background-color: var(--glass);
+      height: 100%;
+      border-radius: 10px;
+      box-shadow: 1px 0px 50px 1px gray inset;
+
+      .wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding-top: 50px;
+        gap: 20px;
+        width: 100%;
+        padding-inline: 20px;
+      }
+    }
+  }
 }

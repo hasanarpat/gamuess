@@ -1,2 +1,124 @@
 .classic {
+  width: 100%;
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 60%;
+    margin: auto;
+
+    .game-img {
+      width: 60%;
+      object-fit: cover;
+      box-shadow: 5px 5px 40px 10px rgba(207, 204, 204, 0.712);
+      border-radius: 4px;
+    }
+
+    .who-guessed {
+      width: 70%;
+
+      p {
+        font-family: monospace;
+        text-align: center;
+        font-size: 14px;
+
+        .guess-number {
+          font-size: 16px;
+          font: 700;
+          color: orange;
+          margin-left: 6px;
+          margin-right: 6px;
+        }
+      }
+    }
+
+    .input-area {
+      display: flex;
+      flex-direction: column;
+      width: 60%;
+
+      input {
+        width: 100%;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 6px;
+      }
+
+      .buttons {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-top: 4px;
+
+        button {
+          flex-grow: 1;
+          padding: 10px;
+          cursor: pointer;
+          font-size: 14px;
+          font-weight: 600;
+          font-family: 'Press Start 2P', system-ui;
+          border: 3px solid black;
+          box-shadow: 5px 5px rgba(87, 85, 85, 0.712);
+
+          &:hover {
+            box-shadow: 5px 5px rgba(207, 204, 204, 0.712);
+            scale: 110%;
+          }
+
+          &:first-child {
+            background-color: rgb(255, 145, 0);
+            max-width: 25%;
+          }
+
+          &:last-child {
+            background-color: rgb(0, 38, 255);
+          }
+        }
+      }
+    }
+
+    .passed-hearts {
+      width: 50%;
+      margin: auto;
+      margin-top: 10px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+
+      span {
+        background-color: red;
+
+        padding: 6px;
+      }
+    }
+
+    .hearts {
+      width: 70%;
+      margin: auto;
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .heart-icons {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+
+        .heart {
+          width: 40px;
+          height: 40px;
+
+          &.fill {
+            color: red;
+            stroke: red;
+            fill: red;
+          }
+        }
+      }
+    }
+  }
 }

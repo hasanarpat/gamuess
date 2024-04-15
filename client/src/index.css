@@ -24,6 +24,8 @@
   --main-blue-opacity: #191996d0;
   --link-bg: #44448b;
   --link-hover-bg: #afafd8;
+  --glass: #ffffff38;
+  --shine-blue: #247fe7;
 }
 
 #root {
