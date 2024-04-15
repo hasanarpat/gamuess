@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: inherit;
+  color: inherit;
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: 'Press Start 2P', system-ui;
+  line-height: 1.5;
+  font-weight: 400;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  height: 100%;
+
+  --main-blue: #191996;
+  --main-blue-opacity: #191996d0;
+  --link-bg: #44448b;
+  --link-hover-bg: #afafd8;
+}
+
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  /* background-image: url('../public/bg-main.jpg'); */
+  background-image: url('https://d2c6c3qulxklrf.cloudfront.net/img/wallpaper.webp');
+  height: 100%;
+}
+
+.gradient-text {
+  background: -webkit-linear-gradient(#f06d01, #f1b876);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
