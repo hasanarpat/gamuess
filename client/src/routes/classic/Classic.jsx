@@ -2,33 +2,39 @@ import { useEffect, useState } from 'react';
 import './classic.css';
 import useDebouncedValue from '../../lib/useDebouncedValue';
 import dummy from '../../lib/dummy.json';
-
-const game = {
-  img: '../../public/game-sample.png',
-  id: 1,
-  name: 'FIFA 22',
-  platforms: ['linux', 'windows', 'ios', 'android'],
-  category: ['indie', 'strategy', 'simulator'],
-  developer: 'greenheart Games',
-  description:
-    'In Game Dev Tycoon you replay the history of the gaming industry by starting your own video game development company in the 80s. Create best selling games. Research new technologies and invent new game types. Become the leader of the market and gain worldwide fans.',
-};
-const guessedPeople = 4218;
-const averageTry = 1;
+import { game, averageTry, guessedPeople } from '../../lib/constants';
 
 const Classic = () => {
   const [gameName, setGameName] = useState('');
   const [gameSearch, setGameSearch] = useState([]);
-  const debouncedValue = useDebouncedValue(gameName, 500);
-  const [passedHeart, setPassedHeart] = useState(2);
+  const [passedHeart, setPassedHeart] = useState(0);
+  const [isGuessedTrue, setIsGuessedTrue] = useState(0);
+  const [finish, setFinish] = useState(false);
 
-  const handleSubmit = () => {};
+  const debouncedValue = useDebouncedValue(gameName, 500);
+
+  const handleSubmit = () => {
+    // check if input matches with game name
+
+    // if input is null, do not do anything
+    if (debouncedValue.length < 0) {
+      return;
+    }
+
+    // make all chars lower case, trim white spaces and delete spaces between chars to find exact match
+    setIsGuessedTrue(
+      gameName.toLocaleLowerCase().trim().replace(/\s/g, '') ===
+        game.name.toLocaleLowerCase().trim().replace(/\s/g, '')
+    );
+
+    finishGame();
+  };
 
   const handlePass = () => {
-    if (passedHeart <= 6) {
+    if (passedHeart < 6) {
       setPassedHeart((prev) => prev + 1);
     } else {
-      return;
+      finishGame();
     }
   };
 
@@ -43,10 +49,27 @@ const Classic = () => {
     }
   }, [debouncedValue]);
 
+  const finishGame = () => {
+    setFinish(true);
+  };
+
+  const handleGameName = (name) => {
+    setGameName(name);
+  };
+
   return (
     <main className='classic'>
       <div className='wrapper'>
-        <img src={game.img} alt='game' className='game-img' />
+        <img
+          src={game.img}
+          alt='game'
+          className='game-img'
+          style={
+            isGuessedTrue
+              ? { filter: `blur(0px)` }
+              : { filter: `blur(${(6 - passedHeart) * 5}px)` }
+          }
+        />
         <div className='who-guessed'>
           <p>
             <span className='guess-number'>{guessedPeople}</span>
@@ -60,7 +83,7 @@ const Classic = () => {
             placeholder='Search game...'
             className='game-input'
             value={gameName}
-            onChange={(e) => setGameName(e.target.value)}
+            onChange={(e) => handleGameName(e.target.value)}
           />
           {gameSearch.length > 0 && (
             <ul className='search-result'>
@@ -69,7 +92,7 @@ const Classic = () => {
                   key={i}
                   className='searc-result-item'
                   onClick={() => {
-                    setGameName(game.game_title);
+                    handleGameName(game.game_title);
                     setGameSearch([]);
                   }}
                 >
@@ -78,12 +101,15 @@ const Classic = () => {
               ))}
             </ul>
           )}
-          <div className='buttons'>
-            <button onClick={handlePass}>Pass</button>
-            <button onClick={handleSubmit}>Try it</button>
-          </div>
         </div>
-        {passedHeart && (
+        {finish && (
+          <div className='finish-game'>{isGuessedTrue ? 'Yeay' : ':/'}</div>
+        )}
+        <div className='buttons'>
+          <button onClick={handlePass}>Pass</button>
+          <button onMouseDown={handleSubmit}>Try it</button>
+        </div>
+        {passedHeart > 0 && (
           <div className='passed-hearts'>
             {[...Array(passedHeart).keys()].map((item, i) => (
               <span key={i}>Passed</span>
