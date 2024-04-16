@@ -6,7 +6,7 @@ import dummy from '../../lib/dummy.json';
 const game = {
   img: '../../public/game-sample.png',
   id: 1,
-  name: 'Game Dev Tycoon',
+  name: 'FIFA 22',
   platforms: ['linux', 'windows', 'ios', 'android'],
   category: ['indie', 'strategy', 'simulator'],
   developer: 'greenheart Games',
@@ -65,7 +65,14 @@ const Classic = () => {
           {gameSearch.length > 0 && (
             <ul className='search-result'>
               {gameSearch.map((game, i) => (
-                <li key={i} className='searc-result-item'>
+                <li
+                  key={i}
+                  className='searc-result-item'
+                  onClick={() => {
+                    setGameName(game.game_title);
+                    setGameSearch([]);
+                  }}
+                >
                   {game.game_title}
                 </li>
               ))}
