@@ -2,7 +2,13 @@ import { useEffect, useState } from 'react';
 import './classic.css';
 import useDebouncedValue from '../../lib/useDebouncedValue';
 import dummy from '../../lib/dummy.json';
-import { game, averageTry, guessedPeople } from '../../lib/constants';
+import {
+  game,
+  averageTry,
+  guessedPeople,
+  totalHearts,
+  blurPercentage,
+} from '../../lib/constants';
 
 const Classic = () => {
   const [gameName, setGameName] = useState('');
@@ -71,7 +77,9 @@ const Classic = () => {
             isGuessedTrue
               ? { visibility: 'hidden', marginBottom: '30%' }
               : {
-                  filter: `blur(${(6 - passedHeart) * 5}px)`,
+                  filter: `blur(${
+                    (totalHearts - passedHeart) * blurPercentage
+                  }px)`,
                   marginBottom: '0%',
                 }
           }
