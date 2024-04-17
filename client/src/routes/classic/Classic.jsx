@@ -8,12 +8,13 @@ const Classic = () => {
   const [gameName, setGameName] = useState('');
   const [gameSearch, setGameSearch] = useState([]);
   const [passedHeart, setPassedHeart] = useState(0);
-  const [isGuessedTrue, setIsGuessedTrue] = useState(0);
+  const [isGuessedTrue, setIsGuessedTrue] = useState(false);
   const [finish, setFinish] = useState(false);
 
   const debouncedValue = useDebouncedValue(gameName, 500);
 
   const handleSubmit = () => {
+    if (finish) return;
     // check if input matches with game name
 
     // if input is null, do not do anything
@@ -31,6 +32,7 @@ const Classic = () => {
   };
 
   const handlePass = () => {
+    if (finish) return;
     if (passedHeart < 6) {
       setPassedHeart((prev) => prev + 1);
     } else {
@@ -54,6 +56,7 @@ const Classic = () => {
   };
 
   const handleGameName = (name) => {
+    if (finish) return;
     setGameName(name);
   };
 
@@ -145,8 +148,20 @@ const Classic = () => {
           </div>
         )}
         <div className='buttons'>
-          <button onClick={handlePass}>Pass</button>
-          <button onMouseDown={handleSubmit}>Try it</button>
+          <button
+            disabled={finish}
+            style={{ cursor: finish && 'not-allowed' }}
+            onClick={handlePass}
+          >
+            Pass
+          </button>
+          <button
+            disabled={finish}
+            style={{ cursor: finish && 'not-allowed' }}
+            onMouseDown={handleSubmit}
+          >
+            Try it
+          </button>
         </div>
         {passedHeart > 0 && (
           <div className='passed-hearts'>

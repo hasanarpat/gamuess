@@ -1,5 +1,5 @@
 export const game = {
-  img: '../../game-sample.png',
+  img: 'https://images.unsplash.com/photo-1713182025153-c33ae2b6cb3d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDEwfGJvOGpRS1RhRTBZfHxlbnwwfHx8fHw%3D',
   id: 1,
   name: 'FIFA 22',
   platforms: ['linux', 'windows', 'ios', 'android'],
