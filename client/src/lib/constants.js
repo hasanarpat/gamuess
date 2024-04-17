@@ -10,3 +10,5 @@ export const game = {
 };
 export const guessedPeople = 4218;
 export const averageTry = 1;
+export const totalHearts = 1;
+export const blurPercentage = 1;
