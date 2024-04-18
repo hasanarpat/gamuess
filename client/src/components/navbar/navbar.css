@@ -39,6 +39,7 @@
           height: 100%;
           top: 0;
           right: 0;
+          z-index: 999;
 
           .wrapper {
             background-color: var(--main-blue-opacity);

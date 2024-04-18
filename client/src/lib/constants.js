@@ -1,7 +1,7 @@
 export const game = {
-  img: 'https://images.unsplash.com/photo-1713182025153-c33ae2b6cb3d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDEwfGJvOGpRS1RhRTBZfHxlbnwwfHx8fHw%3D',
+  img: 'https://i.pinimg.com/736x/b2/1d/d7/b21dd7f6e2245d6bbfbb8b451bfed2df.jpg',
   id: 1,
-  name: 'FIFA 22',
+  name: 'Doom',
   platforms: ['linux', 'windows', 'ios', 'android'],
   category: ['indie', 'strategy', 'simulator'],
   developer: 'greenheart Games',
@@ -10,5 +10,5 @@ export const game = {
 };
 export const guessedPeople = 4218;
 export const averageTry = 1;
-export const totalHearts = 1;
-export const blurPercentage = 1;
+export const totalHearts = 6;
+export const blurPercentage = 5;
